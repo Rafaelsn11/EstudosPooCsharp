@@ -1,14 +1,14 @@
 # EstudosPooCsharp
 Repositório para estudos de Poo/ Revisão
 
-#Programação orientada a objetos
+## Programação orientada a objetos
 - Paradigma baseado no conceito de objetos(mundo real) para representar diferentes aspectos da aplicação. Exemplo: dados de um cliente numa aplicação de e-commerce.
 
-#Seus 4 pilares:
-- ## Abstração
-- ## Encapsulamento
-- ## Herança
-- ## Polimorfismo
+## Seus 4 pilares:
+-  Abstração
+-  Encapsulamento
+-  Herança
+-  Polimorfismo
 
 # - Abstração
 - Na programação orientada a objetos a abstração seria pegar só o que é preciso para aquele caso. Por exemplo, se fomos abstrair uma pessoa para um site de e-commerce, só precisamos do nome, endereço e número do cartão, não precisamos saber o que ela faz, ou sua altura e etc. Abstraimos e usamos as informações necessárias. 
