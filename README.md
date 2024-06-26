@@ -29,3 +29,19 @@ Repositório para estudos de Poo/ Revisão
 
 ## Objeto: 
 - instância da classe
+
+# Classes no C#
+## O que tem?
+## - Atributos
+## - Propriedades - Get e Set
+## - Métodos - comportamentos do objeto
+## - Construtores - Chamado toda vez que faz a instância da classe
+## - Todos os citados acima são membros
+## - Também existe membros estáticos que são a nível de classe, não de instância
+## - Membros estáticos são usados quando queremos fazer uma ação que não vai envolve o estado do objeto.
+## - Existe também membros constantes. Não altera.
+## Um objeto também pode ser composto de outros objetos, tornando ele muito mais complexo e bem dividido.
+
+# Tipos por valor e por referência
+
+## - Tipos por valor ocupam a Stack na memória(e o valor e fixo na memória) e os tipos por referência ocupam a Heap (as variáveis apontam para os valores na memória).
