@@ -4,7 +4,33 @@ public class Cesta
 {
     public Cesta()
     {
-        Itens = new List<Item>();
+        _itens = new List<Item>();
     }
-    public List<Item> Itens { get; set; }
+    private IList<Item> _itens;
+
+    public IEnumerable<Item> Itens =>_itens.AsEnumerable();
+
+    public int TotalItens => _itens.Sum(x => x.Quantidade);
+
+    public decimal ValorTotal => _itens.Sum(x => x.Total);
+
+    public string ValorTotalFormatado => ValorTotal.ToString("C");
+
+    public void AdicionarItem(Item item)
+    {
+        if(item == null)
+            throw new ArgumentNullException($"this is {item}");
+        
+        _itens.Add(item);
+    }
+
+    public void RemoverItem(Item item)
+    {
+        _itens.Remove(item);
+    }
+
+    // public void Pagar(IPagamento pagamento)
+    // {
+    //     pagamento.Processar(this);
+    // }
 }

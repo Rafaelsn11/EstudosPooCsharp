@@ -1,42 +1,36 @@
-﻿using EstudosPooCsharp.Models;
+﻿using EstudosPooCsharp;
+using EstudosPooCsharp.Frete;
+using EstudosPooCsharp.Frete.Impl;
+using EstudosPooCsharp.Models;
+using EstudosPooCsharp.Pagamento;
+using EstudosPooCsharp.Pagamento.Impl;
 
+Cesta minhaCesta = new Cesta();
 
+Item bola = new Item("Bola de Futebol", 89.90M, 1);
+Item camiseta = new Item("Camiseta Vasco", 297.99M, 2);
+Item chuteira = new Item("Chuteira Nike", 149.99M, 1);
 
-// CarrinhoItem bola = new CarrinhoItem();
+minhaCesta.AdicionarItem(bola);
+minhaCesta.AdicionarItem(camiseta);
+minhaCesta.AdicionarItem(chuteira);
 
-// bola.nome = "Bola de Futebol";
-// bola.quantidade  = 1;
-// bola.preco = 99.00M;
-
-// CarrinhoItem camisa = new CarrinhoItem();
-
-// camisa.nome = "Camiseta de Frio";
-// camisa.quantidade  = 1;
-// camisa.preco = 99.00M;
-
-
-// Item bola = Item.CriarBola();
-
-Cesta cesta = new Cesta();
-
-Item bola = new Item("Bola de futebol", 99M);
-bola.Quantidade = 2;
-cesta.Itens.Add(bola);
-
-Item camiseta = new Item("Camiseta do Vasco", 150M);
-camiseta.Quantidade = 3;
-cesta.Itens.Add(camiseta);
-
-foreach(var item in cesta.Itens)
+Console.WriteLine($"Itens da cesta:");
+foreach (var item in minhaCesta.Itens)  
 {
-    Console.WriteLine($"{item.Nome}: {item.TotalFormatado}");
+    Console.WriteLine($"- {item.Nome.PadRight(35, ' ')} | Qtd {item.Quantidade} | {item.TotalFormatado}");
 }
 
-var itens = cesta.Itens; // Erro de design
+Console.WriteLine($"Total Itens da Cesta: {minhaCesta.TotalItens}");
+Console.WriteLine($"Valor Total da Cesta: {minhaCesta.ValorTotal}");
 
-itens.Add(new Item("Tenis Nike", 300M));
+ICalcularFrete calcularFrete = new CalcularFreteCorreiosPAC();
+var opcaoFrete = calcularFrete.Calcular(minhaCesta);
 
-foreach(var item in cesta.Itens)
-{
-    Console.WriteLine($"{item.Nome}: {item.TotalFormatado}");
-}
+if (opcaoFrete != null)
+    Console.WriteLine($"Frete selecionado: {opcaoFrete.Nome}");
+
+IPagamento pagamento = SelecionarPagamento.Informar();
+pagamento.Processar(minhaCesta);
+
+// minhaCesta.Pagar(new PagamentoBoleto());
