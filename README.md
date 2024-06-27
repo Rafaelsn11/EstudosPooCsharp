@@ -45,3 +45,9 @@ Repositório para estudos de Poo/ Revisão
 # Tipos por valor e por referência
 
 ## - Tipos por valor ocupam a Stack na memória(e o valor e fixo na memória) e os tipos por referência ocupam a Heap (as variáveis apontam para os valores na memória).
+
+# Interfaces
+## - Interface nada mais é do que um contrato. Com Interfaces conseguimos ter uma abstração maior e uma possibilidades maior de estender o código.
+
+# Classes abstradas
+## - Serve pra especializar o código.
