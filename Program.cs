@@ -24,7 +24,7 @@ foreach (var item in minhaCesta.Itens)
 Console.WriteLine($"Total Itens da Cesta: {minhaCesta.TotalItens}");
 Console.WriteLine($"Valor Total da Cesta: {minhaCesta.ValorTotal}");
 
-ICalcularFrete calcularFrete = new CalcularFreteCorreiosPAC();
+ICalcularFrete calcularFrete = SelecionarFrete.InformarFrete();
 var opcaoFrete = calcularFrete.Calcular(minhaCesta);
 
 if (opcaoFrete != null)
@@ -34,3 +34,13 @@ IPagamento pagamento = SelecionarPagamento.Informar();
 pagamento.Processar(minhaCesta);
 
 // minhaCesta.Pagar(new PagamentoBoleto());
+
+
+/*exemplos de classes abstradas e suas filhas no dotnet 
+
+-- Stream - classe  abstrata e Mãe
+-- classes filhas dela:
+-- - FileStream
+-- - MemoryStream
+-- - e etc
+*/
