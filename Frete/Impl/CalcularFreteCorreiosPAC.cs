@@ -1,6 +1,6 @@
 namespace EstudosPooCsharp.Frete.Impl;
 
-public class CalcularFreteCorreiosPAC : CalcularFreteCorreios
+public sealed class CalcularFreteCorreiosPAC : CalcularFreteCorreios
 {
     public override string Nome()
     {
@@ -16,4 +16,9 @@ public class CalcularFreteCorreiosPAC : CalcularFreteCorreios
     {
         return 15M;
     }
+
+    // public override OpcaoFrete Calcular(Cesta cesta)
+    // {
+    //     return base.Calcular(cesta);
+    // }
 }

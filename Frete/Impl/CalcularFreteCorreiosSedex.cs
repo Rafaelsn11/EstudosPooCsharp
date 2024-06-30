@@ -1,6 +1,6 @@
 namespace EstudosPooCsharp.Frete.Impl;
 
-public class CalcularFreteCorreiosSedex : CalcularFreteCorreios
+public sealed class CalcularFreteCorreiosSedex : CalcularFreteCorreios
 {
     public override string Nome()
     {

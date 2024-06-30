@@ -8,7 +8,7 @@ public abstract class CalcularFreteCorreios : ICalcularFrete
     public abstract decimal Valor();
     public abstract int Prazo();
 
-    public OpcaoFrete Calcular(Cesta cesta)
+    public virtual OpcaoFrete Calcular(Cesta cesta)
     {
         var nomeServico = Nome();
         if (String.IsNullOrWhiteSpace(nomeServico))

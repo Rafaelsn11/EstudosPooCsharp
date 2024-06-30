@@ -1,9 +1,7 @@
 ﻿using EstudosPooCsharp;
 using EstudosPooCsharp.Frete;
-using EstudosPooCsharp.Frete.Impl;
 using EstudosPooCsharp.Models;
 using EstudosPooCsharp.Pagamento;
-using EstudosPooCsharp.Pagamento.Impl;
 
 Cesta minhaCesta = new Cesta();
 
