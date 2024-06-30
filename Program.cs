@@ -16,11 +16,10 @@ minhaCesta.AdicionarItem(chuteira);
 Console.WriteLine($"Itens da cesta:");
 foreach (var item in minhaCesta.Itens)  
 {
-    Console.WriteLine($"- {item.Nome.PadRight(35, ' ')} | Qtd {item.Quantidade} | {item.TotalFormatado}");
+    Console.WriteLine($"- {item}");
 }
 
-Console.WriteLine($"Total Itens da Cesta: {minhaCesta.TotalItens}");
-Console.WriteLine($"Valor Total da Cesta: {minhaCesta.ValorTotal}");
+Console.WriteLine(minhaCesta);
 
 ICalcularFrete calcularFrete = SelecionarFrete.InformarFrete();
 var opcaoFrete = calcularFrete.Calcular(minhaCesta);
