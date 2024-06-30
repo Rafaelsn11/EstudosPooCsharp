@@ -51,3 +51,6 @@ Repositório para estudos de Poo/ Revisão
 
 # Classes abstradas
 ## - Serve pra especializar o código.
+
+# Classes seladas
+## - Classes seladas não podem ser herdadas.
