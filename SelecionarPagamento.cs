@@ -1,3 +1,4 @@
+using EstudosPooCsharp.DesignPatterns.Estrutural;
 using EstudosPooCsharp.Pagamento;
 using EstudosPooCsharp.Pagamento.Impl;
 
@@ -15,6 +16,9 @@ public class SelecionarPagamento
             case "BOLETO": return new PagamentoBoleto();
             case "CARTAO": return new PagamentoCartaoCredito();
             case "PIX": return new PagamentoPix();
+            case "Transferencia":
+                var pgtoTransferencia = new PagamentoTransferencia();
+                return new PagamentoTransferenciaAdapter(pgtoTransferencia);
             default: return new PagamentoNaoRealizado();
         }
     }
